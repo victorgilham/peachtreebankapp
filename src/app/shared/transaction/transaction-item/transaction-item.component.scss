@@ -1,0 +1,14 @@
+@import "color-palette";
+:host {
+  display: flex;
+  background-color: white;
+  border: 1px solid $silver;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+  .logo {
+    img {
+      width: 10%;
+    }
+  }
+}
