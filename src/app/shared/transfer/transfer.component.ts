@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
+import { Transfer } from './models/transfer.model';
 
 @Component({
   selector: 'app-transfer',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transfer.component.scss']
 })
 export class TransferComponent implements OnInit {
-
+  transferModel: Transfer = new Transfer();
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+  }
+
+  transfer = (value: NgForm) => {
   }
 
 }
