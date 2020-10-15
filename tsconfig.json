@@ -20,6 +20,9 @@
       "@peachtree-core/*": ["app/core/*"],
       "@peachtree-shared/*": ["app/shared/*"],
       "@peachtree-environments/*": ["environments/*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   }
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { ITransaction } from './_intefaces/transaction.interface';
 
 @Component({
   selector: 'app-transaction-item',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transaction-item.component.scss']
 })
 export class TransactionItemComponent implements OnInit {
+  @Input() transactionItem: ITransaction;
 
   constructor() { }
 
