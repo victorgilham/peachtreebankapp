@@ -15,6 +15,11 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@peachtree-core/*": ["app/core/*"],
+      "@peachtree-shared/*": ["app/shared/*"],
+      "@peachtree-environments/*": ["environments/*"]
+    }
   }
 }

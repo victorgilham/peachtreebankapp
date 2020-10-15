@@ -1,0 +1,18 @@
+$breakpoints: (
+  "phone": 420px,
+  "tablet": 600px,
+  "tablet-landscape": 960px,
+  "desktop": 1280px,
+  "large-screens": 1920px,
+) !default;
+
+@mixin screen($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints , $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "`#{$breakpoint}` is not a valid resolution."
+    + " Please consider to use a valid resolution defined in: #{map-keys($breakpoints)}";
+  }
+}
