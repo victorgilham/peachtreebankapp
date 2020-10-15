@@ -35,14 +35,14 @@
         type="number"
         placeholder="$ 00.0"
         name="amount"
-        [(ngModel)]="transferModel.ammount"
+        [(ngModel)]="transferModel.amount"
         required
         #ammount="ngModel"
         
       />
     </div>
     <div class="submitbtn-container">
-      <button type="submit">SUBMIT</button>
+      <button type="submit" (click)="makeTransfer(transferForm)">SUBMIT</button>
     </div>
   </form>
 </div>

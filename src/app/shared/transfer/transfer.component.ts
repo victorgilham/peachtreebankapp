@@ -18,4 +18,7 @@ export class TransferComponent implements OnInit {
   transfer = (value: NgForm) => {
   }
 
+  makeTransfer = (data) => {
+  }
+
 }

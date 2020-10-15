@@ -1,0 +1,24 @@
+@import "color-palette";
+.container {
+  background-color: white;
+  .header {
+    align-items: center;
+    background-color: $blue-chill;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    width: 100%;
+    .title {
+      color: white;
+    }
+  }
+  .filter-container {
+    display: flex;
+    .sort-container {
+      display: flex;
+      .sort-type {
+        border: 1px solid $silver;
+      }
+    }
+  }
+}
