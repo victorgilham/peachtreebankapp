@@ -4,7 +4,7 @@
   </div>
   <div class="filter-container">
     <div class="search-box">
-      <input type="text" name="search" id="searchbox" placeholder="Search by typing...">
+      <input type="text" name="searchbox" [(ngModel)]="searchbox" id="searchbox" placeholder="Search by typing...">
     </div>
     <div class="sort-container">
       <span>Sort by</span>
@@ -14,8 +14,8 @@
     </div>
   </div>
   <div class="transactions-container">
-    <app-transaction-item></app-transaction-item>
-    <app-transaction-item></app-transaction-item>
-    <app-transaction-item></app-transaction-item>
+    <ng-container *ngFor="let transaction of transactions">
+      <app-transaction-item [transactionItem]="transaction"></app-transaction-item>
+    </ng-container>
   </div>
 </div>
