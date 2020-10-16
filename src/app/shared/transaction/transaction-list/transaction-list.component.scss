@@ -29,9 +29,17 @@
         }
       }
       .sort-container {
+        align-items: center;
         display: flex;
+        font-family: $base-font-regular;
+        span {
+          font-size: 12px;
+          font-family: $base-font-bold;
+          margin: 0 20px;
+        }
         .sort-type {
           border: 1px solid $silver;
+          padding: 0 20px;
         }
       }
     }
