@@ -3,8 +3,8 @@
   <img src={{transactionItem.merchant.logo}} alt={{transactionItem.merchant.name}}>
 </div>
 <div class="transaction-merchant">
-  <div>{{transactionItem.merchant.name}}</div>
-  <div>{{transactionItem.transaction.type}}</div>
+  <div class="merchant-name">{{transactionItem.merchant.name}}</div>
+  <div class="transaction-type">{{transactionItem.transaction.type}}</div>
 </div>
 <div class="transaction-amount">
   {{transactionItem.transaction.amountCurrency.amount | currency:'USD':'symbol'}}
