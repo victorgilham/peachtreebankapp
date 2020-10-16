@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+import { TransferService } from './../../core/services/transfer.service';
 import { Transfer } from './models/transfer.model';
 
 @Component({
@@ -10,7 +11,7 @@ import { Transfer } from './models/transfer.model';
 })
 export class TransferComponent implements OnInit {
   transferModel: Transfer = new Transfer();
-  constructor() { }
+  constructor(private transferService: TransferService) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +20,7 @@ export class TransferComponent implements OnInit {
   }
 
   makeTransfer = (data) => {
+    this.transferService.sendTransfer(data);
   }
 
 }
