@@ -1,5 +1,6 @@
 @import "color-palette";
 @import "fonts";
+@import "responsive";
 :host {
   margin: 5% 0 0 0;
   .container {
@@ -29,6 +30,10 @@
           border-bottom: 1px solid gray;
           width: 90%;
         }
+        @include screen("phone") {
+          flex: 1 0 auto;
+          margin: 5px 0;
+        }
       }
       .sort-container {
         align-items: center;
@@ -40,12 +45,21 @@
           font-size: 12px;
           font-family: $base-font-bold;
           margin-right: 20px;
+          @include screen("phone") {
+            margin-right: 5px;
+          }
         }
         .sort-type {
           border: 1px solid $silver;
           cursor: pointer;
           padding: 0 20px;
         }
+        @include screen("phone") {
+          flex: 1 0 auto;
+        }
+      }
+      @include screen("phone") {
+        flex-wrap: wrap;
       }
     }
     .transactions-container {
