@@ -8,7 +8,7 @@
       <input
         id="from"
         type="text"
-        placeholder="Free Checking(4692) - $5824.76"
+        [placeholder]="'Free Checking(4692) - $'+totalBalance"
         name="from"
         [(ngModel)]="transferModel.from"
         readonly
