@@ -1,5 +1,6 @@
 @import "color-palette";
 @import "fonts";
+@import "responsive";
 :host {
   align-items: center;
   display: flex;
@@ -20,9 +21,15 @@
   .transaction-date {
     font-family: $base-font-light;
     flex: 0 0 8em;
+    @include screen("phone") {
+      flex-basis: 4em;
+    }
   }
   .transaction-merchant {
     flex: 1 0 8em;
+    @include screen("phone") {
+      font-size: 12px;
+    }
     .merchant-name {
       font-family: $base-font-medium;
     }
@@ -33,5 +40,8 @@
   .transaction-amount {
     font-family: $base-font-semi-bold;
     flex: 0 0 5em;
+  }
+  @include screen("phone") {
+    height: 60px;
   }
 }
