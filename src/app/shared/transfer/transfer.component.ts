@@ -12,7 +12,6 @@ import { Transfer } from './models/transfer.model';
 export class TransferComponent implements OnInit {
   transferModel: Transfer = new Transfer();
   totalBalance = 5824.76;
-  placeholderText = `Free Checking(4692) - ${this.totalBalance}`;
   constructor(private transferService: TransferService) { }
 
   ngOnInit(): void {
