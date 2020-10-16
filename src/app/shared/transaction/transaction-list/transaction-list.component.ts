@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TransferService } from './../../../core/services/transfer.service';
 import mockTransactions from './mock/transactions.json';
 
 @Component({
@@ -10,9 +11,47 @@ import mockTransactions from './mock/transactions.json';
 export class TransactionListComponent implements OnInit {
   transactions = mockTransactions.data;
   searchbox = '';
-  constructor() { }
+  constructor(private transferService: TransferService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.transferService.currentTransfer.subscribe(transfer => {
+      let transferObj;
+      transferObj = {
+        dates: {
+          valueDate: Date.now()
+        },
+        transaction: {
+          amountCurrency: {
+            amount: transfer.amount,
+            currencyCode: ''
+          },
+          type: 'Online Transfer',
+          creditDebtIndicator: 'DBIT'
+        },
+        merchant: {
+          accountNumber: 'SI64397745065188826',
+          name: 'The Tea Lounge',
+          logo: 'assets/icons/the-tea-lounge.png'
+        }
+      };
+
+      this.transactions.unshift(transferObj);
+    });
+
   }
+  sortBy = (type: string) => {
+    this.transactions.sort((a, b) => {
+      if (type === 'date') {
+        return (a.transaction.amountCurrency.amount as number) - (b.transaction.amountCurrency.amount as number);
+      }
+      if (type === 'beneficiary') {
+        return a.merchant.name.localeCompare(b.merchant.name);
+      }
+      if (type === 'amount') {
+        return (a.transaction.amountCurrency.amount as number) - (b.transaction.amountCurrency.amount as number);
+      }
+    });
+  }
+
 
 }

@@ -1,9 +1,9 @@
 export interface ITransaction {
-  categoryCode: string;
-  dates: {
+  categoryCode?: string;
+  dates?: {
     valueDate: number
   };
-  transaction: {
+  transaction?: {
     amountCurrency: {
       amount: number;
       currencyCode: string;
@@ -11,7 +11,7 @@ export interface ITransaction {
     type: string;
     creditDebtIndicator: string;
   };
-  merchant: {
+  merchant?: {
     accountNumber: string;
     name: string;
     logo: string;
