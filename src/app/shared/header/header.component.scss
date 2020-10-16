@@ -10,4 +10,11 @@ header {
   .logo {
     width: 12vw;
   }
+  @include screen("phone") {
+    padding: 0;
+    .logo {
+      margin: 0 auto;
+      width: 50vw;
+    }
+  }
 }
