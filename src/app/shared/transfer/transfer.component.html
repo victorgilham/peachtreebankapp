@@ -3,7 +3,7 @@
 </div>
 <div class="form-container">
   <form #transferForm="ngForm" (ngSubmit)="transfer(transferForm)">
-    <div>
+    <div class="input-container">
       <label for="from">FROM ACCOUNT</label>
       <input
         id="from"
@@ -16,7 +16,7 @@
         #from="ngModel"
       />
     </div>
-    <div>
+    <div class="input-container">
       <label for="to">TO ACCOUNT</label>
       <input
         id="to"
@@ -28,7 +28,7 @@
         #to="ngModel"
       />
     </div>
-    <div>
+    <div class="input-container">
       <label for="amount">AMOUNT</label>
       <input
         id="amount"

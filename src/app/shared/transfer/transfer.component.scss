@@ -1,16 +1,20 @@
 @import "color-palette";
+@import "responsive";
+@import "fonts";
 :host {
   background-color: white;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 400px;
+  margin: 5% 2% 0 10%;
+  height: 350px;
   width: 300px;
   .transfer-header {
     align-items: center;
     background-color: $blue-chill;
     display: flex;
+    font-family: $base-font-light;
     height: 40px;
     justify-content: center;
     width: 100%;
@@ -19,9 +23,20 @@
     }
   }
   .form-container {
+    padding: 10px;
     width: 100%;
+    .input-container {
+      margin: 20px 0;
+    }
     label {
       display: block;
+      font-family: $base-font-medium;
+    }
+    input {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid gray;
+      width: 90%;
     }
     .submitbtn-container {
       text-align: right;
@@ -35,5 +50,9 @@
         padding: 5px 40px;
       }
     }
+  }
+  @include screen("phone") {
+    margin: 0;
+    width: 100%;
   }
 }
