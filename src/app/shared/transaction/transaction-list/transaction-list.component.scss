@@ -1,4 +1,5 @@
 @import "color-palette";
+@import "fonts";
 :host {
   margin: 5% 0 0 0;
   .container {
@@ -12,10 +13,21 @@
       width: 100%;
       .title {
         color: white;
+        font-family: $base-font-light;
       }
     }
     .filter-container {
+      align-items: center;
       display: flex;
+      height: 50px;
+      padding: 0 1em;
+      .search-box {
+        input {
+          outline: 0;
+          border: none;
+          border-bottom: 1px solid gray;
+        }
+      }
       .sort-container {
         display: flex;
         .sort-type {
