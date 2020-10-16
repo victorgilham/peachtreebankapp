@@ -6,5 +6,7 @@
   <div>{{transactionItem.merchant.name}}</div>
   <div>{{transactionItem.transaction.type}}</div>
 </div>
-<div class="transaction-amount">{{transactionItem.transaction.amountCurrency.amount}}</div>
+<div class="transaction-amount">
+  {{transactionItem.transaction.amountCurrency.amount | currency:'USD':'symbol'}}
+</div>
 
