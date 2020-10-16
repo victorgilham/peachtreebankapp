@@ -12,6 +12,7 @@
   .transaction-logo {
     flex: 0 0 5em;
     img {
+      filter: grayscale(100%) saturate(50%) contrast(70%);
       width: 40%;
     }
   }
