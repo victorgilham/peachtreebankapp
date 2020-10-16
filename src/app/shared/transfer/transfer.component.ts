@@ -11,6 +11,7 @@ import { Transfer } from './models/transfer.model';
 })
 export class TransferComponent implements OnInit {
   transferModel: Transfer = new Transfer();
+  totalBalance = 5824.76;
   constructor(private transferService: TransferService) { }
 
   ngOnInit(): void {
@@ -20,11 +21,15 @@ export class TransferComponent implements OnInit {
   }
 
   makeTransfer = (data: NgForm) => {
+    if (data.value.amount > this.totalBalance + 500) {
+      alert('Sorry you can not overdraft more than -$500 of your total balance');
+      return;
+    }
     const value = confirm(`You are transferring $ ${data.value.amount}`);
     if (!value) {
       return;
     }
-
+    this.totalBalance -= data.value.amount;
     this.transferService.sendTransfer(data.value);
     data.form.reset();
   }

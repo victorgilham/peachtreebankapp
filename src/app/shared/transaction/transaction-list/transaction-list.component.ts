@@ -30,8 +30,8 @@ export class TransactionListComponent implements OnInit {
         },
         merchant: {
           accountNumber: 'SI64397745065188826',
-          name: 'The Tea Lounge',
-          logo: 'assets/icons/the-tea-lounge.png'
+          name: transfer.to,
+          logo: 'assets/icons/backbase.png'
         }
       };
 
