@@ -6,6 +6,11 @@
 }
 
 body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   background: url("./assets/background.jpg") no-repeat fixed center center;
   background-size: cover;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
