@@ -19,8 +19,14 @@ export class TransferComponent implements OnInit {
   transfer = (value: NgForm) => {
   }
 
-  makeTransfer = (data) => {
-    this.transferService.sendTransfer(data);
+  makeTransfer = (data: NgForm) => {
+    const value = confirm(`You are transferring $ ${data.value.amount}`);
+    if (!value) {
+      return;
+    }
+
+    this.transferService.sendTransfer(data.value);
+    data.form.reset();
   }
 
 }

@@ -1,14 +1,26 @@
 @import "color-palette";
 :host {
+  align-items: center;
   display: flex;
   background-color: white;
   border: 1px solid $silver;
   box-sizing: border-box;
   height: 50px;
+  padding: 10px;
   width: 100%;
-  .logo {
+  .transaction-logo {
+    flex-grow: 2;
     img {
       width: 10%;
     }
+  }
+  .transaction-date {
+    flex-grow: 3;
+  }
+  .transaction-merchant {
+    flex-grow: 8;
+  }
+  .transaction-amount {
+    flex-grow: 3;
   }
 }
