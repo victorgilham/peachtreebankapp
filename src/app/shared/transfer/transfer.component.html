@@ -11,7 +11,6 @@
         placeholder="Free Checking(4692) - $5824.76"
         name="from"
         [(ngModel)]="transferModel.from"
-        required
         readonly
         #from="ngModel"
       />
@@ -42,7 +41,7 @@
       />
     </div>
     <div class="submitbtn-container">
-      <button type="submit" (click)="makeTransfer(transferForm)">SUBMIT</button>
+      <button [ngClass]="{'disabled':!transferForm.valid}" type="submit" [disabled]='!transferForm.valid' (click)="makeTransfer(transferForm)">SUBMIT</button>
     </div>
   </form>
 </div>
